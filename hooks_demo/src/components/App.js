@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AddUser from './AddUser';
 import EditUser from './EditUser';
 import UserList from './UserList';
+import UseReducerExample from './UseReducerExample';
 
 function App(){
   const USERS_DATA = "users-list";
@@ -51,7 +52,8 @@ function App(){
       <div className="ui container">
         <center>
         <h2>User Management</h2>
-        {/* <Counter/> */}
+        {/* { <Counter/>} */}
+        {/* <UseReducerExample/> */}
 
       <Router>
         <Switch>
