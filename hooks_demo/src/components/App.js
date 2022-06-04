@@ -28,7 +28,7 @@ function App(){
     }
 
     const editUserHandler = (user)=>{
-      console.log(user)
+      // console.log(user)
     }
 
     const deleteUserHandler= (id) =>{
