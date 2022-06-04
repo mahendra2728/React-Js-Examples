@@ -11,6 +11,10 @@ export default function AddUser(props) {
 
     const addUser = (e)=>{
         e.preventDefault();
+        if(firstName ==="" || lastName===" " || email===""){
+            alert("Please provide all then details")
+            return;
+        }
 
         const payload = {id:new Date().getMilliseconds(),firstname: firstName, lastname:lastName,email};
         console.log(payload)
@@ -51,7 +55,7 @@ export default function AddUser(props) {
         <div className="ui inverted segment">
             <center><h4>Add User</h4></center>
             <form className="ui form" onSubmit={addUser}>
-            <div class="fields">
+            <div className="fields">
 
                 <div className="field">
                     <label>First Name</label>

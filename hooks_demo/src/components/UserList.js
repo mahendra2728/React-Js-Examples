@@ -6,7 +6,6 @@ export default function UserList(props) {
     const searchTerm = useRef("");
 
     const deleteUser = (id)=>{
-        console.log(id)
         alert('Are you are sure want to delete ?')
         props.deleteUserHandler(id);
     }
@@ -18,9 +17,10 @@ export default function UserList(props) {
     return (
         <>
             <h4>Users List</h4>
-            <input type="text" ref={searchTerm} 
+            <div className="ui input focus">
+               <input type="text" ref={searchTerm} 
                 placeholder="Search Text" 
-                onChange={searchText}/>
+                onChange={searchText}/></div>  
 
             <Link to={"/addUser"}><button className="ui primary button">Add User</button></Link>
             <table className="ui celled table">
@@ -41,7 +41,7 @@ export default function UserList(props) {
                             <td>{user.lastname}</td>
                             <td>{user.email}</td>
                             <td>
-                              <Link to={"/addUser"}><button className="ui green button">Edit</button></Link>
+                              <Link to={{ pathname: `/editUser`, state:{users:user} }}><button className="ui green button">Edit</button></Link>
                               <button className="ui teal button" 
                               onClick={()=>deleteUser(user.id)}>Delete</button>
                             </td>

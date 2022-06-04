@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AddUser from './AddUser';
+import EditUser from './EditUser';
 import UserList from './UserList';
 
 function App(){
@@ -21,6 +22,10 @@ function App(){
 
     const addUserHandler = (user)=>{
       setUsers([...users,user]);
+    }
+
+    const editUserHandler = (user)=>{
+      console.log(user)
     }
 
     const deleteUserHandler= (id) =>{
@@ -60,6 +65,10 @@ function App(){
                 path="/addUser"
                 render={(props)=>(<AddUser {...props} addUserHandler={addUserHandler}/>)}
               />
+              <Route path="/editUser"
+                  render={(props)=>(<EditUser {...props} editUserHandler={editUserHandler} />)}>
+
+              </Route>
         </Switch>
       </Router>
 
