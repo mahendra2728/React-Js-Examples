@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AddUser from './AddUser';
 import EditUser from './EditUser';
 import UserList from './UserList';
-import UseReducerExample from './UseReducerExample';
+//import UseReducerExample from './UseReducerExample';
+//import useCounter from './useCounter';
 
 function App(){
   const USERS_DATA = "users-list";
 
+    //const [counter, increment, decrement, reset] = useCounter(0);
     const [users, setUsers] = useState([]);
     const [searchText, setSearchText] = useState("");
     const [searchResults, setSearchResults] = useState([]);
@@ -53,6 +55,11 @@ function App(){
         <center>
         <h2>User Management</h2>
         {/* { <Counter/>} */}
+       {/* <div>
+          <h4>{counter}</h4>
+          <button onClick={increment}>Increment</button><button onClick={decrement}>Decrement</button> 
+          <button onClick={reset}>Reset</button>
+       </div>  */}
         {/* <UseReducerExample/> */}
 
       <Router>
